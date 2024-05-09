@@ -1,12 +1,23 @@
-let section = []
-section[0] = document.getElementById('section0');
-section[1] = document.getElementById('section1');
+let indice = []
+sectorCarruseles = document.getElementById('sectorCarruseles');
 carruseles = [spa, juegos]
+let carrusel=[]
 for (let i = 0; i < carruseles.length; i++) {
-    card = carruseles[i]
-    // section = section[i]
-    card.forEach(card => {
-        let string = '<article>';
+    carrusel[i]=document.createElement('div')
+    carrusel[i].classList.add('carrusel')
+    carrusel[i].innerHTML=`<button onClick=boton(${i},-1)> -- </button>`
+    carrusel[i].innerHTML+=dameCards(carruseles[i])
+    carrusel[i].innerHTML+=`<button onClick=boton(${i},+1)> ++ </button>`
+    indice[i]=0
+
+    sectorCarruseles.appendChild(carrusel[i])
+
+
+}
+function dameCards(cards) {
+    let string=''
+    cards.forEach(card => {
+        string += '<article>';
         // if (card.video != "") string += '<div class="video"><iframe class="video" src="' + card.video + '" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>';
         // else {
         //     string += '<img class="video" src="imagenes/' + card.imagen + '"></img>';
@@ -19,8 +30,17 @@ for (let i = 0; i < carruseles.length; i++) {
         if (card.repo != "") string += '<div class="repo"><a target="_blank" class="repoLink" href="' + card.repo + '">Ir al Repositorio GitHub</a></h4></div>';
         if (card.link != "") string += '<div class="btnContenedor"> <button class="boton"> <a target="_blank" href="' + card.link + '">' + card.linkTexto + '</a> </button></div></div></article>';
         string += '</article>';
-        console.log(i);
+        // console.log(i);
         // console.log(section);
-        section[i].innerHTML += string;
+        // section[i].innerHTML += string;
     })
+    return string
+}
+
+function boton(carrusel,sentido){
+    indice[carrusel]+=sentido
+    if (indice[carrusel]==-1) indice[carrusel]=carruseles[carrusel].length-1
+    if (indice[carrusel]==carruseles[carrusel].length) indice[carrusel]=0
+    
+    console.log('carr',carrusel,'i',indice[carrusel]);
 }
