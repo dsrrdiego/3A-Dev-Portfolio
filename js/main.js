@@ -6,7 +6,7 @@ for (let i = 0; i < carruseles.length; i++) {
     carrusel[i]=document.createElement('section')
     carrusel[i].classList.add('carrusel')
     carrusel[i].innerHTML=`<button onClick=boton(${i},-1)> -- </button>`
-    carrusel[i].innerHTML+=`<div id="slideCarrusel" class="slideCarrusel">`
+    carrusel[i].innerHTML+=`<div id="slideCarrusel${i}" class="slideCarrusel">`
     carrusel[i].innerHTML+=dameCards(carruseles[i])
     carrusel[i].innerHTML+=`</div>`
     carrusel[i].innerHTML+=`<button onClick=boton(${i},+1)> ++ </button>`
@@ -43,7 +43,29 @@ function boton(carrusel,sentido){
     indice[carrusel]+=sentido
     if (indice[carrusel]==-1) indice[carrusel]=carruseles[carrusel].length-1
     if (indice[carrusel]==carruseles[carrusel].length) indice[carrusel]=0
-    let slide=document.getElementById('slideCarrusel')
-    slide.style.left=200;
-    console.log('carr',carrusel,'i',indice[carrusel]);
+    let slide=document.getElementById(('slideCarrusel'+carrusel))
+    // console.log(slide);
+    // slide.style.marginleft=200
+    // slide.style.setProperty('margin-left', indice[carrusel]*20 + 'px');
+    // setTimeout(function() {
+        // slide.style.marginLeft = indice[carrusel]*200 + "px";
+       let i= parseInt(slide.style.marginLeft, 10)||0
+    //    console.log(i);
+    mover(slide,i,indice[carrusel]*100)
+    //   }, 100);
+    // console.log('carr',carrusel,'i',indice[carrusel]);
+}
+
+function mover(slide,i,f){
+    // console.log(i,f);
+    
+    if (i<f){
+        for (let x=i;x<f;x+=0.001){
+            slide.style.marginLeft = x + "px";
+        }
+    }else{
+        for (let x=i;x>f;x-=0.001){
+            slide.style.marginLeft = x + "px";
+        }
+    }
 }

@@ -38,11 +38,12 @@ h1{
 }
 
 /******************************************/
-#sectorCarruseles{
+/* #sectorCarruseles{
     /* display: flex; */
     /* flex-wrap: wrap; */
     
-}
+
+
 .carrusel{
     justify-content: center;
     display:flex;
@@ -56,9 +57,14 @@ button{
     display:flex;
     /* position: relative; */
     margin-left:0px;
+    /* left:200px; */
+    /* transition: 0.5s easy margin-left; */
+    /* overflow-x: auto; */
 }
 
 article{
+    /* flex: 1 0 100%; Cada artículo ocupa todo el ancho disponible */
+  /* min-width: 100%; Mínimo ancho igual al ancho del contenedor */
     position: relative;
     width: 20%;
     min-width: 230px;
@@ -66,7 +72,7 @@ article{
     margin: 1px;
     margin-bottom: 30px;
     border-radius: var(--miRadio);
-    transition: 0.3s width;
+    /* transition: 0.3s width; */
     min-height: 470px;
 }
 article:hover{
