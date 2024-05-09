@@ -36,18 +36,17 @@ h1{
     color:rgb(64, 177, 96);
     text-align: center;
 }
-/* section{
-    display: flex;
-    align-content: flex-start;
-} */
+
+/******************************************/
 #sectorCarruseles{
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
     
 }
 .carrusel{
     justify-content: center;
     display:flex;
+    /* position: absolute; */
 }
 button{
     background-color: red;
@@ -56,7 +55,7 @@ button{
 .slideCarrusel{
     display:flex;
     /* position: relative; */
-    /* left:200px; */
+    margin-left:0px;
 }
 
 article{

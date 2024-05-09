@@ -3,10 +3,10 @@ sectorCarruseles = document.getElementById('sectorCarruseles');
 carruseles = [spa, juegos]
 let carrusel=[]
 for (let i = 0; i < carruseles.length; i++) {
-    carrusel[i]=document.createElement('div')
+    carrusel[i]=document.createElement('section')
     carrusel[i].classList.add('carrusel')
     carrusel[i].innerHTML=`<button onClick=boton(${i},-1)> -- </button>`
-    carrusel[i].innerHTML+=`<div class="slideCarrusel>`
+    carrusel[i].innerHTML+=`<div id="slideCarrusel" class="slideCarrusel">`
     carrusel[i].innerHTML+=dameCards(carruseles[i])
     carrusel[i].innerHTML+=`</div>`
     carrusel[i].innerHTML+=`<button onClick=boton(${i},+1)> ++ </button>`
@@ -43,6 +43,7 @@ function boton(carrusel,sentido){
     indice[carrusel]+=sentido
     if (indice[carrusel]==-1) indice[carrusel]=carruseles[carrusel].length-1
     if (indice[carrusel]==carruseles[carrusel].length) indice[carrusel]=0
-    
+    let slide=document.getElementById('slideCarrusel')
+    slide.style.left=200;
     console.log('carr',carrusel,'i',indice[carrusel]);
 }
