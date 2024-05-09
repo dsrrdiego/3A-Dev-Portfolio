@@ -6,7 +6,9 @@ for (let i = 0; i < carruseles.length; i++) {
     carrusel[i]=document.createElement('div')
     carrusel[i].classList.add('carrusel')
     carrusel[i].innerHTML=`<button onClick=boton(${i},-1)> -- </button>`
+    carrusel[i].innerHTML+=`<div class="slideCarrusel>`
     carrusel[i].innerHTML+=dameCards(carruseles[i])
+    carrusel[i].innerHTML+=`</div>`
     carrusel[i].innerHTML+=`<button onClick=boton(${i},+1)> ++ </button>`
     indice[i]=0
 
@@ -15,7 +17,7 @@ for (let i = 0; i < carruseles.length; i++) {
 
 }
 function dameCards(cards) {
-    let string='<div class="slideCarrusel">'
+    let string=''
     cards.forEach(card => {
         string += '<article>';
         // if (card.video != "") string += '<div class="video"><iframe class="video" src="' + card.video + '" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>';
@@ -34,7 +36,6 @@ function dameCards(cards) {
         // console.log(section);
         // section[i].innerHTML += string;
     })
-    string+='</div'
     return string
 }
 
