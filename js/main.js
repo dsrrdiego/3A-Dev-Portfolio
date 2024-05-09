@@ -15,7 +15,7 @@ for (let i = 0; i < carruseles.length; i++) {
 
 }
 function dameCards(cards) {
-    let string=''
+    let string='<div class="slideCarrusel">'
     cards.forEach(card => {
         string += '<article>';
         // if (card.video != "") string += '<div class="video"><iframe class="video" src="' + card.video + '" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>';
@@ -34,6 +34,7 @@ function dameCards(cards) {
         // console.log(section);
         // section[i].innerHTML += string;
     })
+    string+='</div'
     return string
 }
 

@@ -50,6 +50,12 @@ section{
     display:flex;
 }
 
+.slideCarrusel{
+    display:flex;
+    position: relative;
+    left:20px;
+}
+
 article{
     position: relative;
     width: 20%;
