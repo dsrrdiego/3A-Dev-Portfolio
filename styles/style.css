@@ -36,24 +36,27 @@ h1{
     color:rgb(64, 177, 96);
     text-align: center;
 }
-section{
+/* section{
     display: flex;
-    flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: space-around;
-}
+} */
 #sectorCarruseles{
     display: flex;
-
+    flex-wrap: wrap;
+    
 }
 .carrusel{
+    justify-content: center;
     display:flex;
+}
+button{
+    background-color: red;
 }
 
 .slideCarrusel{
     display:flex;
-    position: relative;
-    left:200px;
+    /* position: relative; */
+    /* left:200px; */
 }
 
 article{
