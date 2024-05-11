@@ -68,45 +68,29 @@ button{
 article{
     /* flex: 1 0 100%; Cada artículo ocupa todo el ancho disponible */
   /* min-width: 100%; Mínimo ancho igual al ancho del contenedor */
-    position: relative;
-    width: 20%;
-    min-width: 230px;
+    /* position: relative; */
+    /* width: 20%; */
+    /* min-width: 230px; */
     background-color: rgb(73, 142, 85);
     margin: 1px;
     margin-bottom: 30px;
     border-radius: var(--miRadio);
     /* transition: 0.3s width; */
     min-height: 470px;
-    /* animation: moverDesdeLaDerecha 1s forwards; Animación para mover el div */
+    /* animation: agrandar 1s forwards; */
+    transition: width 2s ease;
 }
-.moverDesdeDerecha{
-    animation: moverDesdeLaDerecha 1s forwards; /* Animación para mover el div */
-}
-.moverDesdeIzquierda{
-    animation: moverDesdeLaIzquierda 1s forwards; /* Animación para mover el div */
+
+.agrandar{
+    background-color: rgb(4, 0, 255);
+    width:10px;
+    /* animation: agrandar 1s forwards; Animación para mover el div */
+    transition: width 1s ease; /* Transición de ancho */
 }
 
 
 
-@keyframes moverDesdeLaDerecha {
-  from {
-    margin-left: 1000px; /* Posición inicial del div */
-  }
-  to {
-    margin-left: 0px; /* Posición final del div */
-  }
-}
-@keyframes moverDesdeLaIzquierda {
-  from {
-    margin-left: -1000px; /* Posición inicial del div */
-  }
-  to {
-    margin-left: 0px; /* Posición final del div */
-  }
-}
-article:hover{
-    width:22%;
-}
+
 
 .video{
     border-top-left-radius: var(--miRadio);

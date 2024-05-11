@@ -2,11 +2,16 @@ let indice = []
 sectorCarruseles = document.getElementById('sectorCarruseles');
 carruseles = [spa, juegos]
 let carrusel=[]
+todosLosCards=[[],[]]
 for (let i = 0; i < carruseles.length; i++) {
     carrusel[i]=document.createElement('section')
     carrusel[i].classList.add('carrusel')
     carrusel[i].innerHTML+=`<button onClick=botonMenos(${i})> -- </button>`
-    carrusel[i].innerHTML+=dameCards(carruseles[i])
+    cards=dameCards(i,0)
+    cards.forEach(card=>{
+        carrusel[i].appendChild(card)
+    })
+    // carrusel[i].innerHTML+=dameCards(i)
     carrusel[i].innerHTML+=`<button onClick=botonMas(${i})> ++ </button>`
     indice[i]=0
 
@@ -14,87 +19,46 @@ for (let i = 0; i < carruseles.length; i++) {
 
 
 }
-function dameCards(carrusel) {
+function dameCards(c) {
     // console.log(cards,i);
-    let string=''
-    card=carrusel
-    card.forEach(card => {
-        
-        string += '<article>';
+    let respuesta=[]
+    cards=carruseles[c]
+    for (let i=0;i<carruseles[c].length;i++){
+        card=cards[i]
+    // card.forEach(card => {
+        let articuloNuevo=document.createElement('article')
+        todosLosCards[c][i]=articuloNuevo
+        let string=''
         // if (card.video != "") string += '<div class="video"><iframe class="video" src="' + card.video + '" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>';
         // else {
-            //     string += '<img class="video" src="imagenes/' + card.imagen + '"></img>';
-            // }
-            string += '<div class="titulo"><h2>' + card.titulo + '</h2></div>';
-            string += '<div class="datos"> <div class="categoria"> <h3>' + card.categoria + '</h3> </div>'
-            string += '<div class="categoria fecha"><h5>' + card.fecha + '</h5></div>';
-            string += '<div class="descripcion"><h4>' + card.descripcion + '</h4> </div> <br>';
-            string += '<div class="lenguaje"> <h4>Lenguaje: ' + card.lenguaje + '</h4></div>';
-            if (card.repo != "") string += '<div class="repo"><a target="_blank" class="repoLink" href="' + card.repo + '">Ir al Repositorio GitHub</a></h4></div>';
-            if (card.link != "") string += '<div class="btnContenedor"> <button class="boton"> <a target="_blank" href="' + card.link + '">' + card.linkTexto + '</a> </button></div></div></article>';
-            string += '</article>';
-            // console.log(i);
-            // console.log(section);
-            // section[i].innerHTML += string;
-        });
+        //     string += '<img class="video" src="imagenes/' + card.imagen + '"></img>';
+        // }
+        string += '<div class="titulo"><h2>' + card.titulo + '</h2></div>';
+        string += '<div class="datos"> <div class="categoria"> <h3>' + card.categoria + '</h3> </div>'
+        string += '<div class="categoria fecha"><h5>' + card.fecha + '</h5></div>';
+        string += '<div class="descripcion"><h4>' + card.descripcion + '</h4> </div> <br>';
+        string += '<div class="lenguaje"> <h4>Lenguaje: ' + card.lenguaje + '</h4></div>';
+        if (card.repo != "") string += '<div class="repo"><a target="_blank" class="repoLink" href="' + card.repo + '">Ir al Repositorio GitHub</a></h4></div>';
+        if (card.link != "") string += '<div class="btnContenedor"> <button class="boton"> <a target="_blank" href="' + card.link + '">' + card.linkTexto + '</a> </button></div></div></article>';
+        articuloNuevo.innerHTML=string
+        respuesta.push(articuloNuevo)
+    };
             
-    return string
+    return respuesta
     }
 
-function botonMenos(Islide){
-    indice[Islide]--
-    if (indice[Islide]==-1) indice[Islide]=carruseles[Islide].length-1
-    // let slide=document.getElementById(('slideCarrusel'+carrusel))
-    // slide[Islide].classList.remove("moverDesdeDerecha");
-    // slide[Islide].classList.remove("moverDesdeIzquierda");
-    // void slide[Islide].offsetWidth; // E
-    // slide[Islide].classList.add('moverDesdeDerecha')
-    // console.log(slide);
-    // slide.style.marginleft=200
-    // slide.style.setProperty('margin-left', indice[carrusel]*20 + 'px');
-    // setTimeout(function() {
-        // slide.style.marginLeft = indice[carrusel]*200 + "px";
-    //   let i= parseInt(slide.style.marginLeft, 10)||0
-    //    console.log(i);
-    //mover(slide,i,indice[carrusel]*100)
-    //   }, 100);
-    // console.log('carr',carrusel,'i',indice[carrusel]);
+function botonMenos(c){
+    indice[c]--
+    if (indice[c]==-1) indice[c]=carruseles[c].length-1
+    console.log(todosLosCards[c][indice[c]])
+    // todosLosCards[c][indice[c]].style.setProperty('margin-left',200)
+    let art=todosLosCards[c][indice[c]]
+    // art.classList.remove('agrandar')
+    // art.classList.add('agrandar')
+    art.className += 'agrandar'
+        // todosLosCards[c][indice[c]].style.width = "300px"
+    // var forceRepaint = todosLosCards[c][indice[c]].offsetWidth;
 }
 
 function botonMas(Islide){
-    indice[Islide]++
-    if (indice[Islide]==carruseles[Islide].length) indice[Islide]=0
-    slide[Islide].innerHTML=dameCard(carruseles[Islide],indice[Islide])
-    console.log(slide[Islide].innerHTML);
-    
-    // slide[Islide].classList.remove("moverDesdeIzquierda");
-    // slide[Islide].classList.remove("moverDesdeDerecha");
-    // void slide.offsetWidth; // E
-    // slide[Islide].classList.add('moverDesdeIzquierda')
-    
-
-    // console.log(slide);
-    // slide.style.marginleft=200
-    // slide.style.setProperty('margin-left', indice[carrusel]*20 + 'px');
-    // setTimeout(function() {
-        // slide.style.marginLeft = indice[carrusel]*200 + "px";
-    //   let i= parseInt(slide.style.marginLeft, 10)||0
-    //    console.log(i);
-    //mover(slide,i,indice[carrusel]*100)
-    //   }, 100);
-    // console.log('carr',carrusel,'i',indice[carrusel]);
-}
-
-function mover(slide,i,f){
-    // console.log(i,f);
-    
-    if (i<f){
-        for (let x=i;x<f;x+=0.001){
-            slide.style.marginLeft = x + "px";
-        }
-    }else{
-        for (let x=i;x>f;x-=0.001){
-            slide.style.marginLeft = x + "px";
-        }
-    }
 }
