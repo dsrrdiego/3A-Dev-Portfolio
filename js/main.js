@@ -5,53 +5,82 @@ let carrusel=[]
 for (let i = 0; i < carruseles.length; i++) {
     carrusel[i]=document.createElement('section')
     carrusel[i].classList.add('carrusel')
-    carrusel[i].innerHTML=`<button onClick=boton(${i},-1)> -- </button>`
-    carrusel[i].innerHTML+=`<div id="slideCarrusel${i}" class="slideCarrusel">`
+    carrusel[i].innerHTML+=`<button onClick=botonMenos(${i})> -- </button>`
     carrusel[i].innerHTML+=dameCards(carruseles[i])
-    carrusel[i].innerHTML+=`</div>`
-    carrusel[i].innerHTML+=`<button onClick=boton(${i},+1)> ++ </button>`
+    carrusel[i].innerHTML+=`<button onClick=botonMas(${i})> ++ </button>`
     indice[i]=0
 
     sectorCarruseles.appendChild(carrusel[i])
 
 
 }
-function dameCards(cards) {
+function dameCards(carrusel) {
+    // console.log(cards,i);
     let string=''
-    cards.forEach(card => {
+    card=carrusel
+    card.forEach(card => {
+        
         string += '<article>';
         // if (card.video != "") string += '<div class="video"><iframe class="video" src="' + card.video + '" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>';
         // else {
-        //     string += '<img class="video" src="imagenes/' + card.imagen + '"></img>';
-        // }
-        string += '<div class="titulo"><h2>' + card.titulo + '</h2></div>';
-        string += '<div class="datos"> <div class="categoria"> <h3>' + card.categoria + '</h3> </div>'
-        string += '<div class="categoria fecha"><h5>' + card.fecha + '</h5></div>';
-        string += '<div class="descripcion"><h4>' + card.descripcion + '</h4> </div> <br>';
-        string += '<div class="lenguaje"> <h4>Lenguaje: ' + card.lenguaje + '</h4></div>';
-        if (card.repo != "") string += '<div class="repo"><a target="_blank" class="repoLink" href="' + card.repo + '">Ir al Repositorio GitHub</a></h4></div>';
-        if (card.link != "") string += '<div class="btnContenedor"> <button class="boton"> <a target="_blank" href="' + card.link + '">' + card.linkTexto + '</a> </button></div></div></article>';
-        string += '</article>';
-        // console.log(i);
-        // console.log(section);
-        // section[i].innerHTML += string;
-    })
+            //     string += '<img class="video" src="imagenes/' + card.imagen + '"></img>';
+            // }
+            string += '<div class="titulo"><h2>' + card.titulo + '</h2></div>';
+            string += '<div class="datos"> <div class="categoria"> <h3>' + card.categoria + '</h3> </div>'
+            string += '<div class="categoria fecha"><h5>' + card.fecha + '</h5></div>';
+            string += '<div class="descripcion"><h4>' + card.descripcion + '</h4> </div> <br>';
+            string += '<div class="lenguaje"> <h4>Lenguaje: ' + card.lenguaje + '</h4></div>';
+            if (card.repo != "") string += '<div class="repo"><a target="_blank" class="repoLink" href="' + card.repo + '">Ir al Repositorio GitHub</a></h4></div>';
+            if (card.link != "") string += '<div class="btnContenedor"> <button class="boton"> <a target="_blank" href="' + card.link + '">' + card.linkTexto + '</a> </button></div></div></article>';
+            string += '</article>';
+            // console.log(i);
+            // console.log(section);
+            // section[i].innerHTML += string;
+        });
+            
     return string
-}
+    }
 
-function boton(carrusel,sentido){
-    indice[carrusel]+=sentido
-    if (indice[carrusel]==-1) indice[carrusel]=carruseles[carrusel].length-1
-    if (indice[carrusel]==carruseles[carrusel].length) indice[carrusel]=0
-    let slide=document.getElementById(('slideCarrusel'+carrusel))
+function botonMenos(Islide){
+    indice[Islide]--
+    if (indice[Islide]==-1) indice[Islide]=carruseles[Islide].length-1
+    // let slide=document.getElementById(('slideCarrusel'+carrusel))
+    // slide[Islide].classList.remove("moverDesdeDerecha");
+    // slide[Islide].classList.remove("moverDesdeIzquierda");
+    // void slide[Islide].offsetWidth; // E
+    // slide[Islide].classList.add('moverDesdeDerecha')
     // console.log(slide);
     // slide.style.marginleft=200
     // slide.style.setProperty('margin-left', indice[carrusel]*20 + 'px');
     // setTimeout(function() {
         // slide.style.marginLeft = indice[carrusel]*200 + "px";
-       let i= parseInt(slide.style.marginLeft, 10)||0
+    //   let i= parseInt(slide.style.marginLeft, 10)||0
     //    console.log(i);
-    mover(slide,i,indice[carrusel]*100)
+    //mover(slide,i,indice[carrusel]*100)
+    //   }, 100);
+    // console.log('carr',carrusel,'i',indice[carrusel]);
+}
+
+function botonMas(Islide){
+    indice[Islide]++
+    if (indice[Islide]==carruseles[Islide].length) indice[Islide]=0
+    slide[Islide].innerHTML=dameCard(carruseles[Islide],indice[Islide])
+    console.log(slide[Islide].innerHTML);
+    
+    // slide[Islide].classList.remove("moverDesdeIzquierda");
+    // slide[Islide].classList.remove("moverDesdeDerecha");
+    // void slide.offsetWidth; // E
+    // slide[Islide].classList.add('moverDesdeIzquierda')
+    
+
+    // console.log(slide);
+    // slide.style.marginleft=200
+    // slide.style.setProperty('margin-left', indice[carrusel]*20 + 'px');
+    // setTimeout(function() {
+        // slide.style.marginLeft = indice[carrusel]*200 + "px";
+    //   let i= parseInt(slide.style.marginLeft, 10)||0
+    //    console.log(i);
+    //mover(slide,i,indice[carrusel]*100)
     //   }, 100);
     // console.log('carr',carrusel,'i',indice[carrusel]);
 }

@@ -60,6 +60,9 @@ button{
     /* left:200px; */
     /* transition: 0.5s easy margin-left; */
     /* overflow-x: auto; */
+    /*animation: moverDesdeLaDerecha 1s forwards; /* Animación para mover el div */
+
+
 }
 
 article{
@@ -74,6 +77,32 @@ article{
     border-radius: var(--miRadio);
     /* transition: 0.3s width; */
     min-height: 470px;
+    /* animation: moverDesdeLaDerecha 1s forwards; Animación para mover el div */
+}
+.moverDesdeDerecha{
+    animation: moverDesdeLaDerecha 1s forwards; /* Animación para mover el div */
+}
+.moverDesdeIzquierda{
+    animation: moverDesdeLaIzquierda 1s forwards; /* Animación para mover el div */
+}
+
+
+
+@keyframes moverDesdeLaDerecha {
+  from {
+    margin-left: 1000px; /* Posición inicial del div */
+  }
+  to {
+    margin-left: 0px; /* Posición final del div */
+  }
+}
+@keyframes moverDesdeLaIzquierda {
+  from {
+    margin-left: -1000px; /* Posición inicial del div */
+  }
+  to {
+    margin-left: 0px; /* Posición final del div */
+  }
 }
 article:hover{
     width:22%;
