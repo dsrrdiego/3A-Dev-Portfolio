@@ -26,8 +26,8 @@ function dameCards(c) {
     for (let i=0;i<carruseles[c].length;i++){
         card=cards[i]
     // card.forEach(card => {
-        let articuloNuevo=document.createElement('article')
-        todosLosCards[c][i]=articuloNuevo
+        todosLosCards[c][i]=document.createElement('article')
+        
         let string=''
         // if (card.video != "") string += '<div class="video"><iframe class="video" src="' + card.video + '" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>';
         // else {
@@ -40,8 +40,8 @@ function dameCards(c) {
         string += '<div class="lenguaje"> <h4>Lenguaje: ' + card.lenguaje + '</h4></div>';
         if (card.repo != "") string += '<div class="repo"><a target="_blank" class="repoLink" href="' + card.repo + '">Ir al Repositorio GitHub</a></h4></div>';
         if (card.link != "") string += '<div class="btnContenedor"> <button class="boton"> <a target="_blank" href="' + card.link + '">' + card.linkTexto + '</a> </button></div></div></article>';
-        articuloNuevo.innerHTML=string
-        respuesta.push(articuloNuevo)
+        todosLosCards[c][i].innerHTML=string
+        respuesta.push(todosLosCards[c][i])
     };
             
     return respuesta
@@ -54,8 +54,8 @@ function botonMenos(c){
     // todosLosCards[c][indice[c]].style.setProperty('margin-left',200)
     let art=todosLosCards[c][indice[c]]
     // art.classList.remove('agrandar')
-    // art.classList.add('agrandar')
-    art.className += 'agrandar'
+    art.classList.add('agrandar')
+    // art.className += 'agrandar'
         // todosLosCards[c][indice[c]].style.width = "300px"
     // var forceRepaint = todosLosCards[c][indice[c]].offsetWidth;
 }
