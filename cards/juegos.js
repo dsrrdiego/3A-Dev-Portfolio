@@ -1,4 +1,6 @@
-let juegos = [{
+let juegos = {
+    'titulo':"Juegos:",
+    cards:[{
         "titulo": "Network game",
         "video": "https://www.youtube.com/embed/mNfs-mkYVDE",
         "categoria": "Game",
@@ -42,7 +44,19 @@ let juegos = [{
         "repo": "https://github.com/dsrrdiego/dado-3d.git",
         "link": "https://dsrrdiego.github.io/dado-3d/",
         "linkTexto": "Visitar!!!"
-    }, {
+    },
+    {
+        "titulo": "GALAXY",
+        "video": "https://www.youtube.com/embed/r5a3XCqR1sU",
+        "categoria": "Utilidad astronómica",
+        "fecha": "2020",
+        "descripcion": "Implementacion de las leyes de Newton de objetos astronomicos para calcular colisiones y proyectar trayectorias de vehiculos",
+        "lenguaje": "Lenguaje: C++ / OpenGL",
+        "repo": "https://github.com/dsrrdiego/galaxy.git",
+        "link": "",
+        "linkTexto": ""
+    },
+     {
         "titulo": "La Tierra Ataca",
         "video": "https://www.youtube.com/embed/PCbXwPe_bR4",
         "categoria": "Juego-Dos",
@@ -54,7 +68,7 @@ let juegos = [{
         "linkTexto": "Visitar!!!"
     }
 
-];
+]};
 /*
 {
 "titulo":"",
