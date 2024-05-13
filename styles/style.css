@@ -7,6 +7,7 @@
 *{
     padding: 0;
     margin:0;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -31,11 +32,8 @@ nav{
 
 #descripcion{
     background: url(../imagenes/desarrollo.jpg) center/cover;
-    /* padding-top: calc(var(--tituloHeight) + 15px); */
-    /* padding-top: 100%; */
     padding-bottom: 30px;
     display: flex;
-    /* min-height: 100%; */
     margin-bottom: 5%;
 }
 #descripcionTexto{
@@ -43,7 +41,6 @@ nav{
     padding-bottom: 5%;
     width:80%;
     height: 100%;
-    /* background-color: aquamarine; */
     margin-left:10%;
     text-align: center;
     color:rgb(90, 84, 76);
@@ -70,7 +67,7 @@ nav{
     display:flex;
     justify-content: center;
     align-items: center;
-
+    margin-bottom: 5%;
 }
 .tituloDeSlide{
     font-size: 35px;
@@ -78,13 +75,10 @@ nav{
     color:rgb(1, 8, 12);
     margin-bottom: 1%;
 }
-/* button{
-} */
 .botonSlide{
     border-style: none;
     width:10%;
     font-size: 75px;
-    /* background-color: ; */
     border-radius: 100%;
     height: 60%;
     margin:1%;
@@ -97,20 +91,19 @@ nav{
 .slide{
     display:flex;
     overflow-x: hidden;
-    scroll-behavior: smooth;
-
 }
 
 /* ////////////////CADA ARTICULO////////////////////////// */
 article{
     position: relative;
-    min-width:100%;
+    min-width:60%;
     background-color: var(--colorFondo);
     margin: 1px;
     margin-bottom: 30px;
     border-radius: var(--miRadio);
-    /* min-height: 300px; */
     display:flex;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 
@@ -125,14 +118,12 @@ article{
 }
 .titulo{
     background-color: rgba(62, 14, 58, 0.356);
-    /* background-color: rgba(14, 62, 21, 0.356); */
     text-align: center;
     width:100%;
 }
 .datos{
     padding-left: 3%;
     padding-right: 10px;
-    overflow: hidden
     
 }
 
@@ -155,8 +146,6 @@ article{
 }
 .boton{
     color:green;
-    /* background-color: green; */
-    /* margin: auto; */
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
@@ -191,7 +180,7 @@ article{
 }
 #enviar{
     margin-top: 1%;
-
+    height: 20%;
     /* color:red; */
     width:10%;
     margin-left:60%;
