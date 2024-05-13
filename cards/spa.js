@@ -1,6 +1,19 @@
 let spa = {
     'titulo':"Single Page Application:",
-    cards:[{
+    cards:[
+        {
+        "titulo": "Nutri Vida",
+        "video": "",
+        "imagen":"nutrivida.png",
+        "categoria": "SPA",
+        "fecha": "2023",
+        "descripcion": "Catalogo de ventas de ptroductos orgánicos",
+        "lenguaje": "Angular",
+        "repo": "",
+        "link": "https://nutrivida.com.ar/",
+        "linkTexto": "Visitar!!"
+    },
+        {
         "titulo": "Instituto de la Caridad Universa",
         "video": "https://www.youtube.com/embed/lagCclC8cek",
         "categoria": "SPA",
