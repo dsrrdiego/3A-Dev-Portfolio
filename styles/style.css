@@ -107,6 +107,49 @@ nav {
   margin-bottom: 20px;
 }
 
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+  .descripcion-contenido {
+    padding: 15px;
+  }
+
+  .descripcion-contenido h2 {
+    font-size: 36px;
+  }
+
+  .descripcion-contenido p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .descripcion-contenido {
+    padding: 0 40px;
+  }
+
+  .descripcion-contenido h2 {
+    font-size: 28px;
+  }
+
+  .descripcion-contenido p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .descripcion-contenido {
+    padding: 0 23px;
+  }
+
+  .descripcion-contenido h2 {
+    font-size: 24px;
+  }
+
+  .descripcion-contenido p {
+    font-size: 12px;
+  }
+}
+
 /* ////////////////CADA CARRUSEL////////////////////////// */
 
 #sectorCarruseles {
