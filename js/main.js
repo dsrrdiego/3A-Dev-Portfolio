@@ -1,6 +1,6 @@
 let indice = [];
 sectorCarruseles = document.getElementById("sectorCarruseles");
-carruseles = [spa, apis, juegos, back];
+carruseles = [android,spa, apis, juegos, back];
 for (let i = 0; i < carruseles.length; i++) {
   let titulo = document.createElement("h2");
   titulo.classList.add("tituloDeSlide");
