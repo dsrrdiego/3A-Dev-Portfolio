@@ -1,34 +1,26 @@
-let indice = [];
-sectorCarruseles = document.getElementById("sectorCarruseles");
-carruseles = [android,spa, apis, juegos, back];
-for (let i = 0; i < carruseles.length; i++) {
-  let titulo = document.createElement("h2");
-  titulo.classList.add("tituloDeSlide");
-  titulo.innerHTML = carruseles[i].titulo;
-  sectorCarruseles.appendChild(titulo);
+renderFiltros(tags);
+filtrar();
 
-  let carrusel = document.createElement("section");
-  carrusel.classList.add("carrusel");
+function render(filtrados) {
+  const carruselDiv = document.getElementById('carrusel');
+  if (filtrados.length != 0) {
+      const articulos = crearArticulos(filtrados);
+      const carrusel = new Carrusel(carruselDiv, articulos);
+  } else {
+      const noHayCards = document.createElement('h1');
+      noHayCards.innerHTML = "No hay Trabajos que coincidan con tu busqueda";
+      noHayCards.classList.add('noHayCards');
+      carruselDiv.innerHTML = '';
 
-  let slide = document.createElement("section");
+      carruselDiv.appendChild(noHayCards);
+  }
 
-  carrusel.innerHTML += `<button onClick=boton2(${i},-1) class="botonSlide"> < </button>`;
-
-  slide.classList.add("slide");
-  slide.id = "slide" + i;
-  slide.innerHTML = dameCards(carruseles[i].cards);
-  carrusel.appendChild(slide);
-
-  carrusel.innerHTML += `<button onClick=boton2(${i},1) class="botonSlide"> > </button>`;
-
-  indice[i] = 0;
-
-  sectorCarruseles.appendChild(carrusel);
 }
-function dameCards(cards) {
-  let string = "";
+function crearArticulos(cards) {
+  let resultado=[];
   cards.forEach((card) => {
-    string += "<article>";
+    const articulo=document.createElement('article');
+    let string = "";
     if (card.video != "")
       string +=
         '<div class="video"><iframe class="video" src="' +
@@ -63,11 +55,13 @@ function dameCards(cards) {
         "</a> </button></div></article>";
     // if (card.link != "") string += '<div class="btnContenedor"> <button class="boton"> <a target="_blank" href="' + card.link + '">' + card.linkTexto + '</a> </button></div></div></article>';
     string += "</div>";
-    string += "</article>";
+    articulo.innerHTML+=string;
     // respuesta.push(articuloNuevo)
+    resultado.push(articulo)
   });
+  
 
-  return string;
+  return resultado;
 }
 
 function boton2(i, sentido) {
