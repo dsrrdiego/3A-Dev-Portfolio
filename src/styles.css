@@ -8,6 +8,14 @@
   font-family: "Montserrat", "Source Code Pro", "Space Mono", "sans-serif";
 }
 
+body {
+  background-color: #fdfbf6;
+}
+
+h1 {
+  color: #242422;
+}
+
 .content-width {
   width: 1240px;
   min-width: 1240px;
