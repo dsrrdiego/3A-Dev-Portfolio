@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", "Source Code Pro", "Space Mono", "sans-serif";
+}
+
+.content-width {
+  width: 1240px;
+  min-width: 1240px;
+  max-width: 1240px;
+}
+
+@media screen and (max-width: 1320px) {
+  .content-width {
+    width: 80%;
+    min-width: 80%;
+    max-width: 95%;
+  }
+}
