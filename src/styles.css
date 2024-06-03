@@ -9,11 +9,16 @@
 }
 
 body {
-  background-color: #fdfbf6;
+  background-color: #242422;
+  /*background-color: #fdfbf6;*/
 }
 
-h1 {
-  color: #242422;
+h1,
+h2,
+p,
+nav {
+  color: #fdfbf6;
+  /*color: #242422;*/
 }
 
 .content-width {

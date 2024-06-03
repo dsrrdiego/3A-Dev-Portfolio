@@ -1,0 +1,20 @@
+.bg-image {
+  position: relative;
+  overflow: hidden; /* Asegúrate de que el contenido no se salga del contenedor */
+}
+
+.bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+    url("../../../assets/hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  z-index: -1;
+}
