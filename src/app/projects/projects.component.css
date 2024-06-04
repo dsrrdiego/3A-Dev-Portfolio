@@ -11,18 +11,19 @@
 }
 
 .card {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .card:hover {
   background-size: 400% 400%;
   animation: backgroundAnimation 4s ease-in-out infinite;
+  transform: scale(1.01);
+  cursor: pointer;
 }
 
 .content {
   background-color: white;
   padding: 1rem;
-  padding-top: 5rem;
   border-radius: 10px;
 }
 

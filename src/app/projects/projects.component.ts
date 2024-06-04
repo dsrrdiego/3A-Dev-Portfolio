@@ -10,7 +10,7 @@ export class ProjectsComponent implements OnInit {
     {
       titulo: 'Nutri Vida',
       video: '',
-      imagen: 'nutrivida.png',
+      image: 'nutrivida.png',
       categoria: 'SPA',
       fecha: '2024',
       descripcion: 'Catálogo de ventas de productos orgánicos',
@@ -25,12 +25,12 @@ export class ProjectsComponent implements OnInit {
         'carrito',
         'sql',
         'springboot',
-        'angular',
+        'react',
       ],
     },
     {
       titulo: 'Micro-Notes & Tags',
-      video: 'https://www.youtube.com/embed/opDXLnqacdA',
+      image: 'fondo.jpeg',
       categoria: 'FLUTTER',
       fecha: '2024',
       descripcion:
@@ -43,7 +43,7 @@ export class ProjectsComponent implements OnInit {
     },
     {
       titulo: 'Instituto de la Caridad Universal',
-      video: 'https://www.youtube.com/embed/lagCclC8cek',
+      image: 'desarrolloWeb.webp',
       categoria: 'SPA',
       fecha: '2023',
       descripcion:
@@ -56,7 +56,7 @@ export class ProjectsComponent implements OnInit {
     },
     {
       titulo: 'Emerge Cultural',
-      video: 'https://www.youtube.com/embed/Pk2FgA6MHGc',
+      image: 'subte.png',
       categoria: 'Spring Boot Api',
       fecha: '2022',
       descripcion:

@@ -2,9 +2,15 @@
   <div class="card-grid">
     <article
       *ngFor="let card of cards"
-      class="card hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]"
+      class="card hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-1 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]"
     >
-      <div class="content rounded-[10px] bg-white p-4 !pt-20 sm:p-6">
+      <div class="content bg-white">
+        <figure class="w-full h-60 pb-4">
+          <img
+            class="w-full h-full object-cover image-inside rounded-xl"
+            src="../../../../assets/images/{{ card.image }} "
+          />
+        </figure>
         <time
           [attr.datetime]="card.fecha"
           class="block text-xs text-gray-900 font-bold"
@@ -16,7 +22,7 @@
             {{ card.titulo }}
           </h3>
         </a>
-        <p class="text-gray-700">{{ card.descripcion }}</p>
+        <p class="text-gray-700 min-h-[72px]">{{ card.descripcion }}</p>
         <div class="mt-4 flex flex-wrap gap-1">
           <span
             *ngFor="let tag of card.tags"
